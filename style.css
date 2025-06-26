@@ -7,18 +7,23 @@
 
 body {
     background-image: linear-gradient(180deg, rgb(255, 255, 255), rgb(215, 215, 215));
+    min-height: 100vh;
+}
+
+body, button, a, .atividade{
+    cursor: none;
 }
 
 /* Menu do portfólio */
 .barra-menu {
     display: flex;
-    justify-items: right;
+    justify-items: center;
     align-items: center;
     white-space: nowrap;
-    margin-left: 13%;
 }
 
 .dropdown-menu {
+    cursor: none;
     position: absolute;
     overflow: hidden;
     background-color: rgb(128, 128, 128);
@@ -65,9 +70,10 @@ body {
 .menu {
     z-index: 1000;
     position: fixed;
-    width: 100%;
+    width: 100vw;
     height: 55px;
     align-items: center;
+    justify-content: center;
     display: flex;
     background-color: rgb(128, 128, 128);
 }
@@ -80,8 +86,9 @@ body {
 
 .home{
     display: flex;
+    position: absolute;
+    left: 10px;
     align-items: center;
-    margin-left: 3%;
     filter: invert(90%);
     align-items: center;
     transition: 0.3s;
@@ -90,6 +97,10 @@ body {
 
 .home:hover {
     filter: invert(75%);
+}
+
+.homeIMG {
+    width: 40px;
 }
 
 .matérias {
@@ -106,6 +117,23 @@ body {
 .matérias:hover{
     font-size: large;
     color: rgb(206, 206, 206);
+}
+
+.cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(77, 77, 77, 0.7);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-0%, -0%);
+  transition: transform 0.1s ease, background-color 0.2s ease;
+  z-index: 10000;
+}
+
+.cursor.hover {
+  background-color: rgba(77, 77, 77, 0.5);
+  transform: scale(2.0);
 }
 
 /* Seção de atividades */
@@ -306,6 +334,20 @@ section {
     .atividade{
         width: 100%;
         flex-direction: column;
+    }
+    .matérias {
+        font-size: 11px;
+        margin-left: 15px;
+    }
+    .matérias:hover {
+        font-size: 13px;
+    }
+    .dropdown-menu {
+        margin-left: 15px;
+        font-size: 11px;
+    }
+    .homeIMG {
+        width: 35px;
     }
     @keyframes escrever {
         0% {

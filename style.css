@@ -8,6 +8,11 @@
 body {
     background-image: linear-gradient(180deg, rgb(255, 255, 255), rgb(215, 215, 215));
     min-height: 100vh;
+    transition: 0.7s;
+}
+
+body.dark{
+    background-image: linear-gradient(180deg, rgb(49, 49, 49), rgb(88, 88, 88));
 }
 
 body, button, a, .atividade{
@@ -76,6 +81,15 @@ body, button, a, .atividade{
     justify-content: center;
     display: flex;
     background-color: rgb(128, 128, 128);
+    transition: 0.7s;
+}
+
+body.dark .menu{
+    background-color: rgb(49, 49, 49);
+}
+
+body.dark .dropdown-menu{
+    background-color: rgb(49, 49, 49);
 }
 
 .portfólio-texto {
@@ -103,6 +117,36 @@ body, button, a, .atividade{
     width: 40px;
 }
 
+.trilho {
+    position: absolute;
+    left: 80px;
+    background-color: rgb(218, 218, 218);
+    height: 25px;
+    width: 50px;
+    border-radius: 50px;
+    transition: 0.7s;
+}
+
+.indicador {
+    left: 0;
+    background-color: rgba(77, 77, 77);
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    position: absolute;
+    transform: scale(.9);
+    transition: .7s;
+}
+
+.trilho.dark {
+    background-color: rgb(65, 65, 65);
+}
+
+.trilho.dark .indicador {
+    left: 25px;
+    background-color: rgb(150, 150, 150);
+}
+
 .matérias {
     color: rgb(238, 238, 238);
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -127,13 +171,17 @@ body, button, a, .atividade{
   border-radius: 50%;
   pointer-events: none;
   transform: translate(-0%, -0%);
-  transition: transform 0.1s ease, background-color 0.2s ease;
+  transition: transform 0.1s;
   z-index: 10000;
 }
 
 .cursor.hover {
   background-color: rgba(77, 77, 77, 0.5);
   transform: scale(2.0);
+}
+
+body.dark .cursor{
+    filter: invert(75%);
 }
 
 /* Seção de atividades */
@@ -157,16 +205,25 @@ section {
     font-style: normal;
     color: rgb(90, 90, 90);
     overflow: hidden;
+    transition: 0.7s;
 
     white-space: nowrap;
     border-right: 8px solid rgb(207, 207, 207);
     animation: marcador .5s step-end infinite, escrever 5s steps(22, end)
 }
 
+body.dark .msg {
+    color: rgb(212, 212, 212)
+}
+
 .dino {
     display: flex;
     justify-content: center;
     animation: entrada 2s;
+}
+
+body.dark .dino{
+    filter: invert(100%);
 }
 
 /* Atividades */
@@ -191,6 +248,11 @@ section {
 }
 .título {
     color: rgb(90, 90, 90);
+    transition: 0.7s;
+}
+
+body.dark .título{
+    color: rgb(212, 212, 212)
 }
 
 .texto {
@@ -204,16 +266,34 @@ section {
     padding: 15px;
     border-radius: 10px;
     box-shadow: 10px 10px 10px rgb(184, 184, 184);
+    transition: 0.7s;
 }
 
-.imagem {
-    margin: 20px;
+body.dark .texto{
+    background-color: rgb(223, 223, 223);
+    box-shadow: 10px 10px 10px rgb(68, 68, 68)
+}
+
+.imagemH {
+    margin: 5px;
     border-radius: 20px;
     box-shadow: 10px 10px 10px rgb(189, 189, 189);
+    width: 50%;
 }
 
-.imagem:checked {
-    border-radius: 0;
+body.dark .imagemH {
+    box-shadow: 10px 10px 10px rgb(68, 68, 68)
+}
+
+.imagemV {
+    margin: 5px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px rgb(189, 189, 189);
+    width: 25%;
+}
+
+body.dark .imagemV {
+    box-shadow: 10px 10px 10px rgb(68, 68, 68)
 }
 
 .linkH {
@@ -256,6 +336,11 @@ section {
     color: rgb(90, 90, 90);
     bottom: 0px;
     animation: entrada 3s, descer 3s;
+    transition: 0.7s;
+}
+
+body.dark .titulos-section {
+    color: rgb(212, 212, 212)
 }
 
 .anos-anteriores {
@@ -334,6 +419,12 @@ section {
     .atividade{
         width: 100%;
         flex-direction: column;
+    }
+    .imagemH {
+        width: 100%;
+    }
+    .texto {
+        width: 100%;
     }
     .matérias {
         font-size: 11px;

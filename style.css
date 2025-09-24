@@ -423,6 +423,9 @@ body.dark .titulos-section {
     .imagemH {
         width: 100%;
     }
+    .imagemV {
+        width: 75%;
+    }
     .texto {
         width: 100%;
     }
